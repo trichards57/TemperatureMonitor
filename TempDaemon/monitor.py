@@ -4,8 +4,9 @@ import math
 
 averageCount = 3
 averagePause = 5  # s
+samplePause = 300 # s
 
-leds.ofF()
+leds.off()
 
 
 while True:
@@ -21,3 +22,5 @@ while True:
 
     print("Light : {:.2f}".format(averageLight))
     print("Temperature : {:.2f}".format(averageTemp))
+
+    time.sleep(samplePause)
