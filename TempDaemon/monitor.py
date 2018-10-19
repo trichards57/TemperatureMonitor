@@ -13,8 +13,8 @@ while True:
     lightReading = []
     tempReading = []
     for i in range(averageCount):
-        lightReading[i] = light.light()
-        tempReading[i] = weather.temperature()
+        lightReading.append(light.light())
+        tempReading.append(weather.temperature())
         time.sleep(averagePause)
 
     averageLight = math.fsum(lightReading)/averageCount
