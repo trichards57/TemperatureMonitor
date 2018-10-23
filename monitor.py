@@ -24,7 +24,7 @@ while True:
         lightReading.append(light.light())
         tempReading.append(weather.temperature())
         pressure.append(weather.pressure())
-        timeReadings.append(int(datetime.utcnow()))
+        timeReadings.append(int(datetime.utcnow().timestamp()))
 
         time.sleep(averagePause)
 
