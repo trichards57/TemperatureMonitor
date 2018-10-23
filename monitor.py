@@ -34,8 +34,13 @@ while True:
     averagePressure = math.fsum(pressure)/averageCount
     averageTime = math.fsum(timeReadings)/averageCount
 
-    obj = {"LightLevel": averageLight, "Temperature": averageTemp, "Pressure": averagePressure, "Time": averageTime }
+    obj = {"LightLevel": averageLight, "Temperature": averageTemp,
+           "Pressure": averagePressure, "Time": averageTime}
 
     print(obj)
+
+    r = requests.post(url, json=obj)
+
+    print("Data Post Result : {:d}".format(r.status_code))
 
     time.sleep(samplePause)
