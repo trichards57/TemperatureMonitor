@@ -9,7 +9,7 @@ url = "https://temp-scanner.azurewebsites.net/api/reading"
 
 averageCount = 3
 averagePause = 5  # s
-samplePause = 300 # s
+samplePause = 300  # s
 
 leds.off()
 
@@ -24,6 +24,7 @@ while True:
         lightReading.append(light.light())
         tempReading.append(weather.temperature())
         pressure.append(weather.pressure())
+        d = datetime.utcnow()
         timeReadings.append(int(datetime.utcnow().timestamp()))
 
         time.sleep(averagePause)
@@ -33,9 +34,8 @@ while True:
     averagePressure = math.fsum(pressure)/averageCount
     averageTime = math.fsum(timeReadings)/averageCount
 
-    print("Light : {:.2f}".format(averageLight))
-    print("Temperature : {:.2f}".format(averageTemp))
-    print("Pressure : {:.2f}".format(averagePressure))
-    print("Time : {:.2f}".format(averageTime))
+    obj = {"LightLevel": averageLight, "Temperature": averageTemp, "Pressure": averagePressure, "Time": averageTime }
+
+    print(obj)
 
     time.sleep(samplePause)
