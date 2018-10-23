@@ -35,7 +35,7 @@ while True:
 
     print("Light : {:.2f}".format(averageLight))
     print("Temperature : {:.2f}".format(averageTemp))
-    print("Pressure : {:.2f}").format(averagePressure))
-    print("Time : {:.2f}").format(averageTime))
+    print("Pressure : {:.2f}".format(averagePressure))
+    print("Time : {:.2f}".format(averageTime))
 
     time.sleep(samplePause)
